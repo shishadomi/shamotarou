@@ -29,9 +29,11 @@ $mail->Subject = $_SESSION['title'];
 
 //Set who the message is to be sent to
 if ($_SESSION['user'] == 'ryo') {
-  $mail->addAddress($data['ryoMail'], 'So');
-} elseif ($_SESSION['user'] == 'meyou') {
   $mail->addAddress($data['miMail'], 'Me');
+  $mail->setFrom($data['mailUser'], 'しゃもたろう');
+} elseif ($_SESSION['user'] == 'meyou') {
+  $mail->addAddress($data['ryoMail'], 'So');
+$mail->setFrom($data['mailUser'], 'ししゃどみ');
 }
 
 //日本語設定
@@ -68,17 +70,13 @@ $mail->Username = $data['mailUser'];
 $mail->Password = $data['mailPass'];
 
 //Set who the message is to be sent from
-$mail->setFrom($data['mailUser'], 'First Last');
 
 //Set an alternative reply-to address
 //$mail->addReplyTo('replyto@example.com', 'First Last');
 
-
-
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
 //$mail->msgHTML(file_get_contents('contents.html'), __DIR__);
-
 
 //Attach an image file
 //$mail->addAttachment('images/phpmailer_mini.png');
