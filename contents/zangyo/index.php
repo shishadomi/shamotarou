@@ -19,8 +19,8 @@ session_start();
 <body>
 <form action="confirm/" method="post">
   <input type="time" name="time" value="18:00">
-  <input type="text" name="title">
-  <textarea name="message" rows="8" cols="30">メッセージを入れましょう</textarea>
+  <input type="text" name="title" value="残業連絡">
+  <textarea name="message" rows="8" cols="30">定時ダッシュ！！！</textarea>
   <button type="submit">そうしん</button>
 </form>
 </body>
