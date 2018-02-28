@@ -7,18 +7,23 @@
 <!-- アイコンの設定 -->
 <!-- <link rel="icon" href="#" sizes="16x16" type="images/png >"-->
 <!-- <link rel="apple-touch-icon-precomposed" href="#" />"-->
-<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="reset.css">
+<link rel="stylesheet" href="style.css">
 <script src="index.js"></script>
 <title>うぇるかめ</title>
 </head>
 <body>
   <form method="post" name="login_ryo" action="info/">
-    <input type="hidden" name="user" value="ryo">
-    <a href="javascript:login_ryo.submit()">あそた</a>
+  	<div class="left">
+      <input type="hidden" name="user" value="ryo">
+      <a class="middle" href="javascript:login_ryo.submit()">そ</a>
+    </div>
   </form>
   <form method="post" name="login_meyou" action="info/">
-    <input type="hidden" name="user" value="meyou">
-    <a href="javascript:login_meyou.submit()">うみゆ</a>
+  	<div class="right">
+      <input type="hidden" name="user" value="meyou">
+      <a class="middle" href="javascript:login_meyou.submit()">み</a>
+    </div>
   </form>
 </body>
 </html>

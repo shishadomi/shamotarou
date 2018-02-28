@@ -1,0 +1,22 @@
+.left {
+	float:left;
+	display: flex;
+	width : 50%
+	padding-left: 24%;
+	padding-right: 24%;
+	background-color: red;
+}
+
+.right {
+	float:right;
+	display : flex;
+	width : 50%
+	padding-left: 24%;
+	padding-right: 24%;
+	background-color: blue;
+}
+
+.middle {
+    align-items: center;
+    text-align: center;
+}
