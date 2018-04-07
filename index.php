@@ -25,12 +25,15 @@ try {
     $pdo = new PDO('mysql:host=localhost;dbname=shisha;charset=utf8', 'root', '', $except);
     $smt = $pdo->query('select * from chat_room where room_flg = 1 order by id desc limit 1');
 	// 実行結果を配列に返す。
-	$select_data = $smt->fetchAll();
+	$selectData = $smt->fetchAll();
 } catch (PDOException $e) {
     exit('データベース接続失敗。'.$e->getMessage());
 }
 
-var_dump($select_data)
+// var_dump($selectData[0]["room_name"]);
  ?>
+<a href="contents/chat?id=<?php print($selectData[0]["id"]); ?>"><?php print($selectData[0]["room_name"]); ?></a>
+
+
 </body>
 </html>
