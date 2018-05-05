@@ -1,5 +1,9 @@
 <?php
 session_start();
+
+$_SESSION['title'] = $_POST['title'];
+$_SESSION['contents'] = $_POST['contents'];
+$_SESSION['url'] = $_POST['url'];
 ?>
 
 <!DOCTYPE html>
@@ -13,17 +17,18 @@ session_start();
 <!-- <link rel="apple-touch-icon-precomposed" href="#" />"-->
 <link rel="stylesheet" href="index.css">
 <script src="index.js"></script>
-<title>ナレッジシェア投稿画面</title>
+<title>ナレッジシェア投稿確認</title>
 </head>
 <body>
-  <form class="inputArea" method="post" action="confirm/">
+  <form class="inputArea" method="post" action="../query/">
     <h2>タイトル</h2>
-    <input type="text" name="title" value="" placeholder="タイトル">
+    <div><?php echo $_POST['title']; ?></div>
     <h2>コンテンツ</h2>
-    <textarea name="contents" rows="15" cols="30"></textarea>
+    <div><?php echo $_POST['contents']; ?></div>
     <h2>参考URL</h2>
-    <input type="text" name="url" value="">
-    <button type="submit">確認</button>
+    <div><?php echo $_POST['url']; ?></div>
+    <button type="button" onclick="history.back()">戻る</button>
+    <button type="submit">投稿する</button>
   </form>
 </body>
 </html>

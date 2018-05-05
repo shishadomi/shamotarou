@@ -17,6 +17,7 @@ session_start();
 </head>
 <body>
   <div class="contentsArea">
+    <h2>backend/infra</h2>
     <div class="backArea">
       <div class="card">
         <img src="images/mame.jpg" alt="Avatar" style="width:100%">
@@ -26,8 +27,26 @@ session_start();
           </div>
       </div>
     </div>
-    <div class="frontArea">frontend/design</div>
-    <div class="extraArea">extra</div>
+    <h2>front/design</h2>
+    <div class="frontArea">
+      <div class="card">
+        <img src="images/mame.jpg" alt="Avatar" style="width:100%">
+          <div class="container">
+            <h4><b>title</b></h4> 
+            <p>なんか入ります</p> 
+          </div>
+      </div>
+    </div>
+    <h2>extra</h2>
+    <div class="extraArea">
+      <div class="card">
+        <img src="images/mame.jpg" alt="Avatar" style="width:100%">
+          <div class="container">
+            <h4><b>title</b></h4> 
+            <p>なんか入ります</p> 
+          </div>
+      </div>
+    </div>
   </div>
 
 </body>

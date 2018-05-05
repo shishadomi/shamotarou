@@ -10,19 +10,20 @@
 }
 .backArea {
   padding: 10px;
-  background-color:#333333;
   grid-column: 1/2;
   grid-row: 2/4;
 }
+.contentsArea h2{
+  padding: 10px;
+  grid-row: 1/2;
+}
 .frontArea {
   padding: 10px;
-  background-color:#AAAAAA;
   grid-column: 2/3;
   grid-row: 2/4;
 }
 .extraArea {
   padding: 10px;
-  background-color:#000000;
   grid-column: 3/4;
   grid-row: 2/4;
 }

@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+h2 {
+  color: #333333;
+  font-size: 20px;
+  position: relative;
+  padding: .25em 0 .5em .75em;
+  border-left: 6px solid #3498db;
+}
+h2::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: '';
+  width: 50%;
+  height: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+input {
+  border:0;
+  font-size: 1.0em;
+  padding:5px;
+  font-family:Arial, sans-serif;
+  border:solid 1px #ccc;
+  margin:0 0 20px;
+  width:300px;
+}
+
+.inputArea {
+}
