@@ -1,5 +1,14 @@
 <?php
 session_start();
+	try {
+		$except = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,PDO::ATTR_EMULATE_PREPARES => false);
+		$pdo = new PDO('mysql:host=localhost;dbname=shisha;charset=utf8', 'root', '', $except);
+		$stmt = $pdo -> prepare("select * from urlLink");
+		$stmt->execute();
+		$imgData = $stmt->fetchAll();
+	} catch (PDOException $e) {
+	    exit('データベース接続失敗。'.$e->getMessage());
+	}
 ?>
 
 <!DOCTYPE html>
@@ -23,6 +32,15 @@ session_start();
     <textarea name="contents" rows="15" cols="30"></textarea>
     <h2>参考URL</h2>
     <input type="text" name="url" value="">
+    <h2>画像</h2>
+    <select name="img">
+      <?php 
+      foreach ($imgData as $img) { 
+      	echo "<option value=" . $img["url"]. ">" . $img["title"] . "</option>";
+      }
+      ?>
+      <option></option>
+    </select>
     <button type="submit">確認</button>
   </form>
 </body>
