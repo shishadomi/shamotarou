@@ -1,7 +1,5 @@
 <?php
-
 session_start();
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,9 +7,6 @@ session_start();
 <meta charset="utf-8">
 <meta  name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<!-- アイコンの設定 -->
-<!-- <link rel="icon" href="#" sizes="16x16" type="images/png >"-->
-<!-- <link rel="apple-touch-icon-precomposed" href="#" />"-->
 <link rel="stylesheet" href="index.css">
 <script src="index.js"></script>
 <title>残業申請</title>
