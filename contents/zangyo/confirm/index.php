@@ -1,10 +1,31 @@
 <?php
-
 session_start();
 
 $_SESSION['time'] = $_POST['time'];
 $_SESSION['title'] = $_POST['title'];
 $_SESSION['message'] = $_POST['message'];
+date_default_timezone_set('Asia/Tokyo');
+$y = date("y");
+$m = date("m");
+$d = date("d");
+
+$except = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,PDO::ATTR_EMULATE_PREPARES => false);
+
+
+//$options = array(PDO::MYSQL_ATTR_INIT_COMMAND=>"SET CHARACTER SET 'utf8'");
+ini_set( 'display_errors', 1 );
+try {
+    $pdo = new PDO('mysql:host=localhost;dbname=shisha;charset=utf8', 'root', '', $except);
+    $threadName = '【勤怠】'.$y.$m.$d;
+    $stmt = $pdo -> prepare("INSERT INTO chat_room (room_name, room_flg) VALUES (:title, 1)");
+    $stmt->bindParam(':title', $threadName, PDO::PARAM_STR);
+    $stmt->execute();
+} catch (PDOException $e) {
+    exit('データベース接続失敗。'.$e->getMessage());
+}
+
+
+
 ?>
 <!DOCTYPE html>
 <head>

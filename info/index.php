@@ -30,6 +30,18 @@
   <a href="../contents/zangyo">残業申請</a>
   <a href="../contents/share">ナレッジシェア</a>
   <a href="../contents/chat">チャット</a>
+
+<?php
+  try {
+      $pdo = new PDO('mysql:host=localhost;dbname=shisha;charset=utf8', 'root', '', $except);
+      $smt = $pdo->query('select * from chat_room where room_flg = 1 order by id desc limit 1');
+    // 実行結果を配列に返す。
+    $selectData = $smt->fetchAll();
+  } catch (PDOException $e) {
+      exit('データベース接続失敗。'.$e->getMessage());
+  }
+ ?>
+<a href="../contents/chat?id=<?php echo($selectData[0]["id"].'&user='.$_SESSION['user']); ?>"><?php echo($selectData[0]["room_name"]); ?></a>
 </body>
 </html>
 
